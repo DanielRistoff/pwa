@@ -1,0 +1,139 @@
+[
+    {
+        "categoria":"Lanches na Chapa",
+        "itens":[
+            {
+                "nome":"X-Burguer",
+                "imagem":"images/x-burguer.jpg",
+                "descricao":"Pão, hambúrguer, queijo cheddare molho especial com pimenta picles ou  maionese",
+                "preco":"10,00"
+            },
+            {
+                "nome":"X-Salada",
+                "imagem":"images/x-salada.jpg",
+                "descricao":"Pão, hambúrguer, queijo cheddare, alface, tomate e molho especial com pimenta picles ou maionese",
+                "preco":"12,00"
+            },
+            {
+                "nome":"X-Egg",
+                "imagem":"images/x-egg.jpg",
+                "descricao":"Pão, hambúrguer, queijo cheddare, ovo, alface, tomate e molho especial com pimenta picles ou maionese",
+                "preco":"13,00"
+            },
+            {
+                "nome":"X-Bacon",
+                "imagem":"images/x-bacon.jpg",
+                "descricao":"Pão, hambúrguer, queijo cheddare, bacon, alface, tomate e molho especial com pimenta picles ou maionese",
+                "preco":"14,00"
+            },
+            {
+                "nome":"X-Frango",
+                "imagem":"images/x-frango.jpg",
+                "descricao":"Pão, hambúrguer, queijo cheddare, frango, alface, tomate e molho especial com pimenta picles ou maionese",
+                "preco":"14,00"
+            },
+            {
+                "nome":"X-Calabresa",
+                "imagem":"images/x-calabresa.jpg",
+                "descricao":"Pão, hambúrguer, queijo cheddare, calabresa, alface, tomate e molho especial com pimenta picles ou  maionese",
+                "preco":"14,00"
+            },
+            {
+                "nome":"X-Tudão",
+                "imagem":"images/x-tudao.jpg",
+                "descricao":"Pão, hambúrguer, queijo cheddare, frango, ovo, bacon, alface, tomate e molho especial com pimenta picles ou  maionese",
+                "preco":"18,00"
+            },
+            {
+                "nome":"X-Alcatra",
+                "imagem":"images/x-alcatra.jpg",
+                "descricao":"Pão, hambúrguer, queijo cheddare, alcatra, alface, tomate e molho especial com pimenta picles ou  maionese",
+                "preco":"-"
+            },
+            {
+                "nome":"Americano",
+                "imagem":"images/americano.jpg",
+                "descricao":"Pão fatiado, ovo, bacon, queijo cheddar (bife ou frango) alface, tomate e batata frita",
+                "preco":"18,00"
+            }  
+        ]
+    },{
+        "categoria":"Porções",
+        "itens":[
+            {
+                "nome":"Fritas 400g",
+                "imagem":"images/fritas-400.jpg",
+                "descricao":"",
+                "preco":"16,00"
+            },   
+            {
+                "nome":"Fritas 800g",
+                "imagem":"images/fritas-800.jpg",
+                "descricao":"",
+                "preco":"28,00"
+            }, 
+            {
+                "nome":"Fritas com calabresa 400g",
+                "imagem":"images/fritas-calabresa-400.jpg",
+                "descricao":"",
+                "preco":"18,00"
+            }, 
+            {
+                "nome":"Fritas com calabresa 800g",
+                "imagem":"images/fritas-calabresa-800.jpg",
+                "descricao":"",
+                "preco":"30,00"
+            }, 
+            {
+                "nome":"Fritas com bacon 400g",
+                "imagem":"images/fritas-bacon-400.jpg",
+                "descricao":"",
+                "preco":"18,00"
+            }, 
+            {
+                "nome":"Fritas com bacon 800g",
+                "imagem":"images/fritas-bacon-800.jpg",
+                "descricao":"",
+                "preco":"30,00"
+            }                   
+        ]
+    },{
+        "categoria":"Pratos",
+        "itens":[
+            {
+                "nome":"Prato feito",
+                "imagem":"images/prato-feito.jpg",
+                "descricao":"",
+                "preco":"18,00"
+            }      
+        ]
+    },{
+        "categoria":"Bebidas",
+        "itens":[
+            {
+                "nome":"Refrigerante 2 litros",
+                "imagem":"images/refri-2litros.jpg",
+                "descricao":"",
+                "preco":"10,00"
+            },   
+            {
+                "nome":"Refrigerante 1 litro",
+                "imagem":"images/refri-1litros.jpg",
+                "descricao":"",
+                "preco":"8,00"
+            },  
+            {
+                "nome":"Refrigerante 600 ml",
+                "imagem":"images/refri-600.jpg",
+                "descricao":"",
+                "preco":"6,00"
+            },  
+            {
+                "nome":"Refrigerante lata",
+                "imagem":"images/refri-lata.jpg",
+                "descricao":"",
+                "preco":"4,00"
+            }              
+        ]
+    }
+]

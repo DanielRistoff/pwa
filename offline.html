@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="manifest" href="manifest.json">
+
+    <!-- Bootstrap CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet">
+
+    <link rel="shortcut icon" href="icons/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="icons/favicon.ico" type="image/x-icon">
+
+    <!-- iOS meta tags and icons -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Comida Ogra">
+    <link rel="apple-touch-icon" href="icons/152.png">
+
+    <meta name="description" content="App de comida ogra">
+    <meta name="theme-color" content="#c00d0e" />
+
+    <title>Ristoff - Lanches & salgados</title>
+  </head>
+  <body>
+    
+    <main>
+
+        <header class="container-fluid fixed-top header">            
+            <img src="images/logo.png" class="logo">
+        </header>
+
+        <section class="container content">
+
+            <div class="row" id="content">
+
+            </div>
+
+            <div class="row">
+                <div class="col-2" style="padding-top: 10px;"><img src="images/offline.png" width="60" alt=""></div>
+                <div class="col-10"><div class="alert alert-warning" role="alert">Você está acessando a versão off-line desta página</div></div>
+            </div>
+
+        </section>
+
+        <footer class="container-fluid fixed-bottom footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+
+                        <div class="btn-group menu_inferior" role="group" aria-label="Menu inferior">
+                            <button type="button" class="btn btn-danger">Instalar App</button>
+                          </div>
+
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+    </main>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script>
+
+//Carregar dados dinâmicos
+var ajax = new XMLHttpRequest();
+
+ajax.open("GET", "./dados.json", true);
+
+ajax.send();
+
+ajax.onreadystatechange = function(){
+
+    var content = document.getElementById('content');
+
+    if(ajax.readyState == 4 && ajax.status == 200){
+
+        var data = ajax.responseText;
+
+        var data_json = JSON.parse(data);
+
+
+        //Não tem produtos
+        if(data_json.length == 0){
+
+            content.innerHTML = '<div class="col-12"><div class="alert alert-warning" role="alert">Ainda não temos produtos cadastrados</div></div>';
+        
+        //Tem produtos
+        }else{
+
+            var html_content = "";
+
+            html_content += '<div style="margin-top: 10px;">';
+            
+            for(var i=0; i<data_json.length;i++){
+
+                if(data_json[i].itens.length == 0){
+                    html_content += '<div class="col-12"><div class="alert alert-warning" role="alert">Não há produtos cadastrados</div></div>';
+                }else{
+                    for(var j=0; j<data_json[i].itens.length; j++){
+                        html_content += card_produto(data_json[i].itens[j].nome,data_json[i].itens[j].imagem,data_json[i].itens[j].descricao,data_json[i].itens[j].preco);
+                    }
+                }
+
+            }
+            
+            html_content += '</div>';
+
+            content.innerHTML = html_content;
+
+        }
+    //Erro no processamento
+    }else{
+        content.innerHTML = '<div class="col-12"><div class="alert alert-danger" role="alert">Ops! Erro ao processar sua solicitação</div></div>';
+    }
+
+}
+
+//Template card
+var card_produto = function(nome, imagem, descricao, preco){
+
+return '  <div class="col-12">'+
+       '    <div class="card" style="border-bottom: 1px rgb(255, 255, 255);">'+
+       '      <div class="card-body" style="background-color: #000000; margin-top: 3px;">'+
+       '        <img src="'+imagem+'" class="card-img-top" alt="Hamburguer">'+
+       '        <div class="row">'+
+       '          <div class="col-9">'+
+       '            <h5 class="card_titulo" style="color: #ffca2c;">'+
+       '              <b>'+nome+'</b>'+
+       '            </h5>'+
+       '          </div>'+
+       '          <div class="col-3" style="display: flex; justify-content: right;">'+
+       '            <div style="width: 70px; height: 75%; background-color: white; text-align: center; border-radius: 10px; margin-top: 3px;">'+
+       '              <h5 class="card-price">'+preco+'</h5>'+
+       '            </div>'+
+       '          </div>'+
+       '        </div>'+
+       '        <p class="card-text" style="color: white;">'+descricao+'</p>'+
+       '      </div>'+
+       '    </div>'+
+       '  </div>';
+
+}
+
+    </script>
+
+  </body>
+</html>
